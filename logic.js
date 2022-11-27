@@ -1,7 +1,17 @@
-const PART_1 = 'part1', PART_2 = 'part2';
+const PART_1 = 'part1';
+const PART_2 = 'part2';
+const NUM_PROBLEMS = 'numProblems';
+
+var numProblems = 0;
 
 function start() {
     nextProblem();
+}
+
+function updateProblemCount(){
+    numProblems++;
+    var element = document.getElementById(NUM_PROBLEMS);
+    element.innerText = numProblems;
 }
 
 function updateText(id, newVal) {
@@ -22,6 +32,7 @@ function getRandom(min, max) {
 }
 
 function nextProblem() {
+    updateProblemCount();
     var part1Random = getRandomArbitrary();
     updateText(PART_1, part1Random);
 
